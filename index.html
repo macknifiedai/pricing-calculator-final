@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+
+<!-- SEO Meta Tags -->
+<title>Macknified AI Pricing Calculator Wizard</title>
+<meta name="description" content="Interactive dark-mode pricing calculator wizard for Macknified AI services, including AI agents, web apps, automation, and consulting." />
+<meta property="og:title" content="Macknified AI Pricing Calculator Wizard" />
+<meta property="og:description" content="Interactive dark-mode pricing calculator wizard for Macknified AI services, including AI agents, web apps, automation, and consulting." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Macknified AI Pricing Calculator Wizard" />
+<meta name="twitter:description" content="Interactive dark-mode pricing calculator wizard for Macknified AI services, including AI agents, web apps, automation, and consulting." />
+<!-- End SEO Meta Tags -->
+
+
+
+
+
+<script src="https://app.macknified.com/widget.js" data-widget="37114762" async></script>  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" data-section="toast">
+        <svg id="toastIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"></svg>
+        <span id="toastMsg"></span>
+    </div>
+
+    <nav id="navbar" data-section="navbar">
+        <a href="https://macknified.com" class="logo">
+            <img src="https://i.ibb.co/Pst2KVgW/macknifiedcirclelogo.png" alt="Macknified AI" class="logo-img">
+            <div class="logo-animated">
+                <svg viewBox="0 0 340 50" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#3388FF"><animate attributeName="stop-color" values="#3388FF;#0066FF;#0066FF;#3388FF" dur="4s" repeatCount="indefinite"/></stop>
+                            <stop offset="50%" style="stop-color:#0066FF"><animate attributeName="stop-color" values="#0066FF;#0066FF;#3388FF;#0066FF" dur="4s" repeatCount="indefinite"/></stop>
+                            <stop offset="100%" style="stop-color:#0066FF"><animate attributeName="stop-color" values="#0066FF;#3388FF;#0066FF;#0066FF" dur="4s" repeatCount="indefinite"/></stop>
+                        </linearGradient>
+                        <linearGradient id="logoGradientWhite" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#FFFFFF"><animate attributeName="stop-color" values="#FFFFFF;#E0E0E0;#FFFFFF" dur="3s" repeatCount="indefinite"/></stop>
+                            <stop offset="100%" style="stop-color:#E0E0E0"><animate attributeName="stop-color" values="#E0E0E0;#FFFFFF;#E0E0E0" dur="3s" repeatCount="indefinite"/></stop>
+                        </linearGradient>
+                        <linearGradient id="logoGradientAI" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#0066FF"><animate attributeName="stop-color" values="#0066FF;#FFFFFF;#0066FF" dur="2s" repeatCount="indefinite"/></stop>
+                            <stop offset="100%" style="stop-color:#FFFFFF"><animate attributeName="stop-color" values="#FFFFFF;#0066FF;#FFFFFF" dur="2s" repeatCount="indefinite"/></stop>
+                        </linearGradient>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <g filter="url(#glow)">
+                        <text x="0"   y="35" class="logo-letter" fill="url(#logoGradient)"      style="animation-delay: 0s">M</text>
+                        <text x="28"  y="35" class="logo-letter" fill="url(#logoGradient)"      style="animation-delay: 0.05s">A</text>
+                        <text x="52"  y="35" class="logo-letter" fill="url(#logoGradient)"      style="animation-delay: 0.1s">C</text>
+                        <text x="76"  y="35" class="logo-letter" fill="url(#logoGradient)"      style="animation-delay: 0.15s">K</text>
+                        <text x="100" y="35" class="logo-letter" fill="url(#logoGradientWhite)" style="animation-delay: 0.2s">N</text>
+                        <text x="126" y="35" class="logo-letter" fill="url(#logoGradientWhite)" style="animation-delay: 0.25s">I</text>
+                        <text x="140" y="35" class="logo-letter" fill="url(#logoGradient)"      style="animation-delay: 0.3s">F</text>
+                        <text x="160" y="35" class="logo-letter" fill="url(#logoGradient)"      style="animation-delay: 0.35s">I</text>
+                        <text x="174" y="35" class="logo-letter" fill="url(#logoGradient)"      style="animation-delay: 0.4s">E</text>
+                        <text x="196" y="35" class="logo-letter" fill="url(#logoGradient)"      style="animation-delay: 0.45s">D</text>
+                        <text x="235" y="35" class="logo-letter" fill="url(#logoGradientAI)"    style="animation-delay: 0.55s">A</text>
+                        <text x="259" y="35" class="logo-letter" fill="url(#logoGradientAI)"    style="animation-delay: 0.6s">I</text>
+                    </g>
+                </svg>
+            </div>
+        </a>
+        <div class="nav-right">
+            <a href="https://macknified.com" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Site
+            </a>
+        </div>
+    </nav>
+
+    <div class="main">
+        <!-- Header -->
+        <div class="page-header">
+            <div class="page-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h1m5 0h1M9 15h6"/></svg>
+                Instant Project Estimate
+            </div>
+            <h1>Get Your Custom Quote</h1>
+            <p>Answer a few quick questions — we'll build your estimate in real time.</p>
+        </div>
+
+        <!-- Progress Stepper -->
+        <div class="stepper" id="stepper" data-section="stepper">
+            <div class="step active" id="stepNode-1">
+                <div class="step-icon">
+                    <span class="num">1</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="step-label">Services</div>
+            </div>
+            <div class="step-line" id="line-1-2"></div>
+            <div class="step" id="stepNode-2">
+                <div class="step-icon">
+                    <span class="num">2</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="step-label">Configure</div>
+            </div>
+            <div class="step-line" id="line-2-3"></div>
+            <div class="step" id="stepNode-3">
+                <div class="step-icon">
+                    <span class="num">3</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="step-label">Contact</div>
+            </div>
+            <div class="step-line" id="line-3-4"></div>
+            <div class="step" id="stepNode-4">
+                <div class="step-icon">
+                    <span class="num">4</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="step-label">Review</div>
+            </div>
+        </div>
+
+        <!-- Wizard Card -->
+        <div class="wizard-card" data-section="wizard-card">
+
+            <!-- STEP 1: Choose Services -->
+            <div class="step-panel active" id="panel-1">
+                <h2 class="panel-title">What do you need built?</h2>
+                <p class="panel-subtitle">Select one or more services — you can combine them for a bigger project.</p>
+                <div class="service-grid">
+                    <div class="service-card" data-service="chatbot" onclick="toggleService('chatbot', this)">
+                        <div class="check-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="sc-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3388FF" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <h3>AI Agent</h3>
+                        <p>Custom conversational AI chatbot</p>
+                        <div class="sc-price">From $500</div>
+                    </div>
+                    <div class="service-card" data-service="webapp" onclick="toggleService('webapp', this)">
+                        <div class="check-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="sc-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3388FF" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        </div>
+                        <h3>Web App</h3>
+                        <p>Landing pages & web applications</p>
+                        <div class="sc-price">From $800</div>
+                    </div>
+                    <div class="service-card" data-service="automation" onclick="toggleService('automation', this)">
+                        <div class="check-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="sc-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3388FF" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.22 5.22l2.12 2.12M16.66 16.66l2.12 2.12M5.22 18.78l2.12-2.12M16.66 7.34l2.12-2.12"/></svg>
+                        </div>
+                        <h3>Automation</h3>
+                        <p>Workflow & system integrations</p>
+                        <div class="sc-price">From $1,000</div>
+                    </div>
+                    <div class="service-card" data-service="consulting" onclick="toggleService('consulting', this)">
+                        <div class="check-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="sc-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3388FF" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3>Consulting</h3>
+                        <p>AI strategy & expert guidance</p>
+                        <div class="sc-price">$150/hour</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: Configure -->
+            <div class="step-panel" id="panel-2">
+                <h2 class="panel-title">Configure your project</h2>
+                <p class="panel-subtitle">Customize each service to match your needs — your estimate updates as you go.</p>
+
+                <!-- Live Estimate Bar -->
+                <div class="estimate-bar">
+                    <div>
+                        <div class="estimate-bar-label">Current Estimate</div>
+                        <div class="estimate-bar-value" id="livePrice">$0</div>
+                    </div>
+                    <div class="estimate-bar-timeline">
+                        <small>Estimated Timeline</small>
+                        <span id="liveTimeline">—</span>
+                    </div>
+                </div>
+
+                <div class="config-sections" id="configSections">
+                    <!-- Chatbot Config -->
+                    <div class="config-section" id="cfg-chatbot" style="display:none;">
+                        <div class="config-section-title">AI Agent Configuration</div>
+                        <div class="field-group">
+                            <label>Complexity Level</label>
+                            <select id="chatbotComplexity" onchange="recalc()">
+                                <option value="basic">Basic — FAQ & Simple Q&A ($500)</option>
+                                <option value="standard">Standard — Lead Capture & Scheduling ($800)</option>
+                                <option value="advanced">Advanced — Multi-flow & Integrations ($1,200)</option>
+                                <option value="enterprise">Enterprise — Full Custom Agent ($2,000+)</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label>Knowledge Base Size</label>
+                            <select id="knowledgeBase" onchange="recalc()">
+                                <option value="small">Small — Up to 20 pages (included)</option>
+                                <option value="medium">Medium — 20–50 pages (+$150)</option>
+                                <option value="large">Large — 50–100 pages (+$300)</option>
+                                <option value="xlarge">Extra Large — 100+ pages (+$500)</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label>Add-ons</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item" onclick="toggleCb(this, 'multiLanguage')">
+                                    <input type="checkbox" id="multiLanguage" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>Multi-language Support</span><small>Support 2–5 languages</small></div>
+                                    <div class="cb-price">+$200</div>
+                                </div>
+                                <div class="checkbox-item" onclick="toggleCb(this, 'crmIntegration')">
+                                    <input type="checkbox" id="crmIntegration" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>CRM Integration</span><small>HubSpot, Salesforce, etc.</small></div>
+                                    <div class="cb-price">+$300</div>
+                                </div>
+                                <div class="checkbox-item" onclick="toggleCb(this, 'customBranding')">
+                                    <input type="checkbox" id="customBranding" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>Custom Branding</span><small>Fully branded widget & UI</small></div>
+                                    <div class="cb-price">+$150</div>
+                                </div>
+                                <div class="checkbox-item" onclick="toggleCb(this, 'priorityTraining')">
+                                    <input type="checkbox" id="priorityTraining" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>Priority Training Session</span><small>1-on-1 setup & admin training</small></div>
+                                    <div class="cb-price">+$200</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Webapp Config -->
+                    <div class="config-section" id="cfg-webapp" style="display:none;">
+                        <div class="config-section-title">Web App Configuration</div>
+                        <div class="field-group">
+                            <label>Project Type</label>
+                            <select id="webType" onchange="recalc()">
+                                <option value="landing">Landing Page ($800)</option>
+                                <option value="multipage">Multi-Page Site ($1,500)</option>
+                                <option value="interactive">Interactive Web App ($2,500)</option>
+                                <option value="custom">Custom Platform ($4,000+)</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label>Design Level</label>
+                            <select id="designLevel" onchange="recalc()">
+                                <option value="standard">Standard — Clean & Professional (included)</option>
+                                <option value="premium">Premium — Custom Brand Design (+$400)</option>
+                                <option value="ultra">Ultra — Motion & Micro-interactions (+$800)</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label>Add-ons</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item" onclick="toggleCb(this, 'animations')">
+                                    <input type="checkbox" id="animations" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>Advanced Animations</span><small>GSAP, scroll effects, transitions</small></div>
+                                    <div class="cb-price">+$300</div>
+                                </div>
+                                <div class="checkbox-item" onclick="toggleCb(this, 'formIntegration')">
+                                    <input type="checkbox" id="formIntegration" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>Form Integration</span><small>Contact forms & email service</small></div>
+                                    <div class="cb-price">+$150</div>
+                                </div>
+                                <div class="checkbox-item" onclick="toggleCb(this, 'seoSetup')">
+                                    <input type="checkbox" id="seoSetup" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>SEO Optimization</span><small>Meta tags, sitemap, schema</small></div>
+                                    <div class="cb-price">+$200</div>
+                                </div>
+                                <div class="checkbox-item" onclick="toggleCb(this, 'thirdParty')">
+                                    <input type="checkbox" id="thirdParty" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>Third-party Integrations</span><small>Analytics, chat widgets, etc.</small></div>
+                                    <div class="cb-price">+$250</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Automation Config -->
+                    <div class="config-section" id="cfg-automation" style="display:none;">
+                        <div class="config-section-title">Automation Configuration</div>
+                        <div class="field-group">
+                            <label>Project Scope</label>
+                            <select id="automationScope" onchange="recalc()">
+                                <option value="single">Single Workflow ($1,000)</option>
+                                <option value="multi">Multiple Workflows ($1,800)</option>
+                                <option value="system">Full System Integration ($3,000)</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label>Number of Integrations</label>
+                            <select id="integrationCount" onchange="recalc()">
+                                <option value="1-2">1–2 integrations (included)</option>
+                                <option value="3-4">3–4 integrations (+$400)</option>
+                                <option value="5+">5+ integrations (+$800)</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label>Add-ons</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item" onclick="toggleCb(this, 'customApi')">
+                                    <input type="checkbox" id="customApi" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>Custom API Development</span><small>Build or extend APIs</small></div>
+                                    <div class="cb-price">+$500</div>
+                                </div>
+                                <div class="checkbox-item" onclick="toggleCb(this, 'dataMapping')">
+                                    <input type="checkbox" id="dataMapping" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>Complex Data Mapping</span><small>Transform & sync data structures</small></div>
+                                    <div class="cb-price">+$350</div>
+                                </div>
+                                <div class="checkbox-item" onclick="toggleCb(this, 'errorHandling')">
+                                    <input type="checkbox" id="errorHandling" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>Advanced Error Handling</span><small>Fallbacks, alerts & recovery</small></div>
+                                    <div class="cb-price">+$200</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consulting Config -->
+                    <div class="config-section" id="cfg-consulting" style="display:none;">
+                        <div class="config-section-title">Consulting Configuration</div>
+                        <div class="field-group">
+                            <label>Engagement Type</label>
+                            <select id="consultingType" onchange="handleConsultingChange()">
+                                <option value="hourly">Hourly Consulting ($150/hr)</option>
+                                <option value="halfday">Half-Day Workshop ($500)</option>
+                                <option value="fullday">Full-Day Workshop ($900)</option>
+                                <option value="strategy">Strategy Package — 10hrs ($1,350)</option>
+                            </select>
+                        </div>
+                        <div class="field-group" id="hoursGroup">
+                            <label>Estimated Hours</label>
+                            <input type="number" id="consultingHours" value="2" min="1" max="40" oninput="recalc()">
+                        </div>
+                        <div class="field-group">
+                            <label>Deliverables</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item" onclick="toggleCb(this, 'writtenReport')">
+                                    <input type="checkbox" id="writtenReport" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>Written Strategy Report</span><small>Detailed recommendations doc</small></div>
+                                    <div class="cb-price">+$200</div>
+                                </div>
+                                <div class="checkbox-item" onclick="toggleCb(this, 'roadmap')">
+                                    <input type="checkbox" id="roadmap" onchange="recalc()">
+                                    <div class="cb-box"></div>
+                                    <div class="cb-text"><span>Implementation Roadmap</span><small>Step-by-step action plan</small></div>
+                                    <div class="cb-price">+$150</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: Contact Info -->
+            <div class="step-panel" id="panel-3">
+                <h2 class="panel-title">Tell us about yourself</h2>
+                <p class="panel-subtitle">We'll send your full estimate and reach out to confirm details.</p>
+
+                <div class="two-col" style="margin-bottom: 18px;">
+                    <div class="field-group">
+                        <label>Full Name <span class="required">*</span></label>
+                        <input type="text" id="clientName" placeholder="Jane Smith">
+                        <div class="error-msg" id="err-name">Please enter your name</div>
+                    </div>
+                    <div class="field-group">
+                        <label>Email Address <span class="required">*</span></label>
+                        <input type="email" id="clientEmail" placeholder="jane@company.com">
+                        <div class="error-msg" id="err-email">Please enter a valid email</div>
+                    </div>
+                    <div class="field-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="clientPhone" placeholder="(555) 123-4567">
+                    </div>
+                    <div class="field-group">
+                        <label>Company Name</label>
+                        <input type="text" id="clientCompany" placeholder="Your Company">
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Describe Your Project <span class="required">*</span></label>
+                    <textarea id="projectDescription" placeholder="Tell us what you're building, your goals, any specific requirements, or questions you have. The more detail you share, the more accurate your estimate will be."></textarea>
+                    <div class="error-msg" id="err-desc">Please describe your project</div>
+                </div>
+            </div>
+
+            <!-- STEP 4: Review & Submit -->
+            <div class="step-panel" id="panel-4">
+                <h2 class="panel-title">Review Your Estimate</h2>
+                <p class="panel-subtitle">Everything looks good? Submit and we'll follow up within 24 hours.</p>
+
+                <div class="summary-hero">
+                    <div class="summary-hero-label">Your Estimated Total</div>
+                    <div class="summary-hero-price" id="summaryPrice">$0</div>
+                    <div class="summary-hero-timeline">Estimated timeline: <span id="summaryTimeline">—</span></div>
+                </div>
+
+                <div class="summary-grid" id="summaryGrid">
+                    <!-- Populated by JS -->
+                </div>
+
+                <div class="disclaimer">
+                    ⚠️ This is an estimate only. Final pricing is confirmed after a brief discovery call based on your specific requirements.
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="wizard-footer" id="wizardFooter">
+                <button class="btn-prev" id="btnPrev" onclick="prevStep()" disabled>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back
+                </button>
+                <div class="footer-note" id="footerNote">Step 1 of 4</div>
+                <button class="btn-next" id="btnNext" onclick="nextStep()">
+                    Continue
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button class="btn-submit" id="btnSubmit" onclick="submitQuote()" style="display:none;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    <span id="submitBtnText">Send My Quote Request</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thank You Modal -->
+    <div class="modal-overlay" id="thankYouModal" data-section="thank-you-modal">
+        <div class="modal-card">
+            <div class="modal-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h2>You're All Set!</h2>
+            <p>Your estimate has been submitted successfully.</p>
+            <div class="modal-total" id="modalTotal"></div>
+            <p>We've sent your full breakdown to <strong id="modalEmail" style="color:var(--accent);"></strong></p>
+            <p class="modal-note">Our team will follow up within 24 hours · macknified.com</p>
+            <button class="modal-btn" onclick="window.location.href='https://macknified.com'">
+                Back to Macknified.com
+            </button>
+        </div>
+    </div>
+
+    
+  <script src="script.js"></script>
+</body>
+</html>
